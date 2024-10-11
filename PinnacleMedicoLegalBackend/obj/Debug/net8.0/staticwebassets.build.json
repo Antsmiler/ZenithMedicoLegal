@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "FE5lUGrHkJvhbgYqA5i4tAlfzWJyIUdvhUOpnGTlUvA=",
+  "Source": "PinnacleMedicoLegalBackend",
+  "BasePath": "_content/PinnacleMedicoLegalBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
