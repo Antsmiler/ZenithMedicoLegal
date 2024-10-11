@@ -9,7 +9,7 @@
     
     <!-- Section 16.2: Medical History -->
    
-  <ion-card>
+    <ion-card>
           <ion-card-header>
             <ion-card-title>16.1 Documentation Considered</ion-card-title>
           </ion-card-header>
@@ -59,7 +59,7 @@
     
             </ion-grid>
           </ion-card-content>
-        </ion-card> 
+    </ion-card> 
 
 
     <ion-card>                  
@@ -192,7 +192,7 @@
         <!-- Section 16.4.1 - According to MXX (Client) -->
         <div *ngFor="let injury of medicalBackground.clientInjuries; let i = index">
           <ion-item>
-            <ion-label>Injury according to MXX ({{i + 1}})</ion-label>
+            <ion-label>Injury according to {{client.name}} ({{i + 1}})</ion-label>
             <ion-textarea [(ngModel)]="injury.detail" name="clientInjury{{i}}"></ion-textarea>
           </ion-item>
           <ion-item>
