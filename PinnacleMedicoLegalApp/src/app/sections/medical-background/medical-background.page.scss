@@ -1,0 +1,57 @@
+/* Styles for ion-card-header */
+ion-card-header {
+    background-color: #4caf50; /* Green background */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    //padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for emphasis */
+  }
+
+  ion-checkbox {
+    --size: 32px;
+    --checkbox-background-checked: #4caf50;
+  }
+  
+  ion-checkbox::part(container) {
+    border-radius: 6px;
+    border: 2px solid #4caf50;
+  }
+  
+  ion-item {
+    --highlight-color-focused: #388e3c; /* Focus color */
+    --min-height: 60px;
+  }
+  
+  ion-input {
+    color: #000000; /* Ensure text color is black */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); /* Adds a slight shadow */
+  }
+  
+  ion-label {
+    color: #4caf50; /* Green label */
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+  }
+  
+  /* Input and label sizes for better UX */
+  .client-form ion-input {
+    font-size: 16px;
+    color: white; /* Ensure text inside the input is visible */
+  }
+  
+  ion-datetime {
+    --width: 100%;  /* Ensure it spans the full width */
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --height: 40px;  /* Adjust the overall height */
+  }
+  

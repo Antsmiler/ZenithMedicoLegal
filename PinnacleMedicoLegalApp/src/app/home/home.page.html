@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Pinnacle MedicoLegal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Clients</h2>
+  
+  <ion-list>
+    <ion-item *ngFor="let client of clients">
+      <ion-label>
+        <h2>{{ client.name }} {{ client.surname }}</h2>
+        <h3>{{ client.medicoLegalReportNumber }}</h3>
+      </ion-label>
+
+      <!-- View Button -->
+      <ion-button fill="outline" (click)="viewClient(client.id)">
+        View
+      </ion-button>
+
+      <!-- Edit Button -->
+      <ion-button fill="solid" color="primary" (click)="editClient(client.id)">
+        Edit
+      </ion-button>
+
+      <!-- Delete Button -->
+      <ion-button fill="outline" color="danger" (click)="removeClient(client.id)">
+        Remove
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Add a button to create a new client -->
+  <ion-button expand="block" color="success" routerLink="/client-details">
+    Add New Client
+  </ion-button>
+</ion-content>

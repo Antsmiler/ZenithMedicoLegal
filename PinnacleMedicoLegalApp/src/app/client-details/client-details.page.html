@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Client Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="onSubmit()" class="client-form">
+    
+    <!-- Section 1: Report Information -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Report Information</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Medico Legal Report Number</ion-label>
+          <ion-input type="text" [(ngModel)]="client.medicoLegalReportNumber" name="medicoLegalReportNumber" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Date of Assessment</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="client.dateOfAssessment" name="dateOfAssessment" required></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Date of Report</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="client.dateOfReport" name="dateOfReport" required></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Referred By</ion-label>
+          <ion-input type="text" [(ngModel)]="client.referredBy" name="referredBy" required></ion-input>
+        </ion-item>
+
+        <!-- My Reference -->
+        <ion-item>
+          <ion-label position="floating">My Reference</ion-label>
+          <ion-input type="text" [(ngModel)]="client.myReference" name="myReference" required></ion-input>
+        </ion-item>
+
+        <!-- Your Reference -->
+        <ion-item>
+          <ion-label position="floating">Your Reference</ion-label>
+          <ion-input type="text" [(ngModel)]="client.yourReference" name="yourReference" required></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Section 2: Client Information -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Client Information</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Identity Number</ion-label>
+          <ion-input type="text" [(ngModel)]="client.identityNumber" name="identityNumber" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input [(ngModel)]="client.name" name="client.name"></ion-input>
+        </ion-item>        
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input [(ngModel)]="client.surname" name="client.surname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Date of Birth</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="client.dateOfBirth" name="dateOfBirth" required></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Age</ion-label>
+          <ion-input type="number" [(ngModel)]="client.age" name="age" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Marital Status</ion-label>
+          <ion-select [(ngModel)]="client.maritalStatus" name="maritalStatus" required>
+            <ion-select-option value="Single">Single</ion-select-option>
+            <ion-select-option value="Married">Married</ion-select-option>
+            <ion-select-option value="Divorced">Divorced</ion-select-option>
+            <ion-select-option value="Widowed">Widowed</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Gender</ion-label>
+          <ion-select [(ngModel)]="client.gender" name="gender" required>
+            <ion-select-option value="Male">Male</ion-select-option>
+            <ion-select-option value="Female">Female</ion-select-option>
+            <ion-select-option value="Other">Other</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Home Language</ion-label>
+          <ion-input type="text" [(ngModel)]="client.homeLanguage" name="homeLanguage" required></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Section 3: Injury Details -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Injury Details</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Date of Injury</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="client.dateOfInjury" name="dateOfInjury" required></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Age at Time of Injury</ion-label>
+          <ion-input type="number" [(ngModel)]="client.ageAtTimeOfInjury" name="ageAtTimeOfInjury" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Time Since Injury</ion-label>
+          <ion-input type="text" [(ngModel)]="client.timeSinceInjury" name="timeSinceInjury" required></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Section 4: Contact and Employment -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Contact and Employment</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Residential Address</ion-label>
+          <ion-input type="text" [(ngModel)]="client.residentialAddress" name="residentialAddress" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contact Details</ion-label>
+          <ion-input type="tel" [(ngModel)]="client.contactDetails" name="contactDetails" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Employment Pre-Accident</ion-label>
+          <ion-input type="text" [(ngModel)]="client.employmentPreAccident" name="employmentPreAccident" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Employment Present</ion-label>
+          <ion-input type="text" [(ngModel)]="client.employmentPresent" name="employmentPresent" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Place of Assessment</ion-label>
+          <ion-input type="text" [(ngModel)]="client.placeOfAssessment" name="placeOfAssessment" required></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Document Upload -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Upload Files</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Upload Document</ion-label>
+          <input type="file" (change)="onFileSelected($event)" />
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Submit Button -->
+    <ion-button expand="block" type="submit" color="success" shape="round">Submit Client Details</ion-button>
+  </form>
+</ion-content>

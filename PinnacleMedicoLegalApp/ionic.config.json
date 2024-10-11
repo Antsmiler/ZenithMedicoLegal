@@ -1,0 +1,7 @@
+{
+  "name": "PinnacleMedicoLegalApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

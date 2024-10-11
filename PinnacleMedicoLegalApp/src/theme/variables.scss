@@ -1,0 +1,22 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+
+// Primary Theme Colors
+:root {
+    --ion-color-primary: #28a745;  // Green color for primary
+    --ion-color-primary-rgb: 40, 167, 69;
+    
+    --ion-color-success: #28a745;  // Green success color
+    --ion-color-success-rgb: 40, 167, 69;
+    
+    --ion-color-secondary: #20c997;  // Lighter green shade
+    --ion-color-secondary-rgb: 32, 201, 151;
+    
+    --ion-color-tertiary: #1e7e34;  // Darker green for accents
+    --ion-color-tertiary-rgb: 30, 126, 52;
+    
+    // Background color for the whole app
+    --ion-background-color: #f8f9fa; // Light background for contrast
+    --ion-text-color: #212529; // Dark text color for better readability
+  }
+  

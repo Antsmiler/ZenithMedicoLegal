@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PinnacleMedicoLegalBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab34133a8ebb8f3457d0b57d3905494ed6af4902")]
 [assembly: System.Reflection.AssemblyProductAttribute("PinnacleMedicoLegalBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PinnacleMedicoLegalBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

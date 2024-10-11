@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Client Hub</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Client Summary -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ client.name }} {{ client.surname }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Medico Legal Report Number:</strong> {{ client.medicoLegalReportNumber }}</p>
+      <p><strong>Date of Assessment:</strong> {{ client.dateOfAssessment | date }}</p>
+      <p><strong>Place of Assessment:</strong> {{ client.placeOfAssessment }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Section Status -->
+  <ion-list>
+    <ion-item *ngFor="let section of sections">
+      <ion-label>
+        <h2>{{ section.name }}</h2>
+        <p>Status: {{ section.status }}</p>
+      </ion-label>
+
+      <!-- Button to navigate to the section -->
+      <ion-button slot="end" (click)="navigateToSection(section)">
+        Go to Section
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Manage Documents Button -->
+  <ion-item>
+    <ion-button expand="block" (click)="manageDocuments()">Manage Documents</ion-button>
+  </ion-item>
+</ion-content>
