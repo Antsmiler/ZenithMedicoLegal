@@ -199,7 +199,7 @@ export class MedicalBackgroundPage implements OnInit {
 
 
     ngOnInit() {
-      this.loadClientDetails(1);
+      this.loadClientDetails(7);
       const clientId = this.route.snapshot.paramMap.get('id');
       if (clientId) {
         this.loadClientDetails(+clientId);

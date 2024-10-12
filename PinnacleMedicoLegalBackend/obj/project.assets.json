@@ -3222,32 +3222,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\antsm\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\emile\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Own\\Projects\\ZenithMedicoLegal\\PinnacleMedicoLegalBackend\\PinnacleMedicoLegalBackend.csproj",
+      "projectUniqueName": "D:\\Projects\\ZenithMedicoLegal\\PinnacleMedicoLegalBackend\\PinnacleMedicoLegalBackend.csproj",
       "projectName": "PinnacleMedicoLegalBackend",
-      "projectPath": "E:\\Own\\Projects\\ZenithMedicoLegal\\PinnacleMedicoLegalBackend\\PinnacleMedicoLegalBackend.csproj",
-      "packagesPath": "C:\\Users\\antsm\\.nuget\\packages\\",
-      "outputPath": "E:\\Own\\Projects\\ZenithMedicoLegal\\PinnacleMedicoLegalBackend\\obj\\",
+      "projectPath": "D:\\Projects\\ZenithMedicoLegal\\PinnacleMedicoLegalBackend\\PinnacleMedicoLegalBackend.csproj",
+      "packagesPath": "C:\\Users\\emile\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\ZenithMedicoLegal\\PinnacleMedicoLegalBackend\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\antsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\emile\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

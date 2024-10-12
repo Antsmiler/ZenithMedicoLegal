@@ -1,0 +1,227 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Section E: Current Complaints for</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollY]="true">
+  <!-- Physical Complaints -->
+  <ion-accordion-group>
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>17. Physical Complaints</ion-label>
+        <div> </div>
+      </ion-item>
+      <div slot="content">
+        
+        <div *ngFor="let symptom of currentcomplaints.clientPhysicalSymptom; let i = index">
+          <ion-item>
+            <ion-label> Symptom {{ i + 1 }}</ion-label>
+          </ion-item>
+          
+          <!-- Frequency and Intensity -->
+          <ion-item>
+            <ion-label position="stacked">Frequency and Intensity</ion-label>
+            <ion-textarea [(ngModel)]="symptom.frequencyAndIntensity" name="frequencyAndIntensity{{ i }}"></ion-textarea>
+          </ion-item>
+        
+          <!-- Location -->
+          <ion-item>
+            <ion-label position="stacked">Location</ion-label>
+            <ion-textarea [(ngModel)]="symptom.location" name="location{{ i }}"></ion-textarea>
+          </ion-item>
+        
+          <!-- Triggers -->
+          <ion-item>
+            <ion-label position="stacked">Triggers</ion-label>
+            <ion-textarea [(ngModel)]="symptom.triggers" name="triggers{{ i }}"></ion-textarea>
+          </ion-item>
+        
+          <!-- Pain Relief -->
+          <ion-item>
+            <ion-label position="stacked">Pain Relief</ion-label>
+            <ion-textarea [(ngModel)]="symptom.painRelief" name="painRelief{{ i }}"></ion-textarea>
+          </ion-item>
+        
+          <!-- Other -->
+          <ion-item>
+            <ion-label position="stacked">Other Details</ion-label>
+            <ion-textarea [(ngModel)]="symptom.other" name="other{{ i }}"></ion-textarea>
+          </ion-item>
+        
+          <!-- Remove Symptom Button -->
+          <ion-item>
+            <ion-button color="danger" (click)="removeSymptom(i)">Remove Injury</ion-button>
+          </ion-item>
+        </div>
+        
+        <!-- Add Symptom Button -->
+        <ion-button expand="block" (click)="addSymptom()">Add Symptom</ion-button>
+        
+      </div>
+    </ion-accordion>
+
+    <!-- Cognitive Complaints -->
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>18. Cognitive Complaints</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Dizziness (especially when bending down)</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Poor memory</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Poor concentration</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Multi-task</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Headache</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Fatigue</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Sleep disturbance</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Light sensitivity</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Tinnitus</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Irritability (specify)</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">How did people say he has changed?</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">In what way does MXX think he has changed? Why?</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+
+     <!-- Psychosocial Complaints -->
+     <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>19. Psychosocial Complaints</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">MXX reports that he still experiences some anxiety when travelling.
+              He reports that his memory of the accident is often triggered while travelling and this makes him become anxious about being involved in another accident.</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">He reports that he has become irritable since the accident and therefore is inclined to easily become irritated with people.
+              He reports that he manages this by simply walking away, instead of reacting in an aggressive manner.</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Limitations with regards to his abilities which have resulted from the injuries (specify):
+              </ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Accident-related life changes:</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Depression:</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Pain:</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Changes in personality:</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+
+    <!-- Functional Difficulties -->
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>20. Functional Difficulties</ion-label>
+      </ion-item>
+      <div slot="content">
+        <ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>Struggles to sit for prolonged periods</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Details</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>Struggles to stand for prolonged periods</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">2Details</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>Struggles to stand for prolonged periods</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">3Details</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item><ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>Struggles to stand for prolonged periods</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">4Details</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item><ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>Struggles to stand for prolonged periods</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">5</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item><ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>Struggles to stand for prolonged periods</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">6</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item><ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>Struggles to stand for prolonged periods</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">7</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>

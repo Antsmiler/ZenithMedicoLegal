@@ -1,2 +1,6 @@
 
 /PinnacleMedicoLegalBackend/bin
+
+.fake
+/PinnacleMedicoLegalBackend/obj
+/PinnacleMedicoLegalBackend/obj

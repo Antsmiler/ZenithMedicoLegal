@@ -7,7 +7,7 @@ import { Client } from '../models/client.model';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'https://192.168.3.109:5001/api';
+  private apiUrl = 'https://192.168.3.41:5001/api';
 
   constructor(private http: HttpClient) {}
 

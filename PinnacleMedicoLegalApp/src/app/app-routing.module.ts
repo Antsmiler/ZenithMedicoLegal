@@ -9,7 +9,11 @@ const routes: Routes = [
   {
     path: 'medical-background',
     loadChildren: () => import('./sections/medical-background/medical-background.module').then( m => m.MedicalBackgroundPageModule)
+  },  {
+    path: 'current-complaints',
+    loadChildren: () => import('./sections/current-complaints/current-complaints/current-complaints.module').then( m => m.CurrentComplaintsPageModule)
   },
+
  // Route for editing
   //{ path: 'section/:name', loadChildren: () => import('./section/section.module').then(m => m.SectionPageModule) },
   //{ path: 'document-management/:id', loadChildren: () => import('./document-management/document-management.module').then(m => m.DocumentManagementPageModule) }
