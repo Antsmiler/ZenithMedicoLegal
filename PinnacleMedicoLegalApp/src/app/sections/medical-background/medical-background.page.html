@@ -4,192 +4,201 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [scrollY]="true">
+  
   <form (ngSubmit)="onSubmit()">
     
+  <ion-accordion-group>
     <!-- Section 16.2: Medical History -->
    
-    <ion-card>
-          <ion-card-header>
-            <ion-card-title>16.1 Documentation Considered</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col><strong>AUTHOR</strong></ion-col>
-                <ion-col><strong>SPECIALITY</strong></ion-col>
-                <ion-col><strong>DOCUMENT</strong></ion-col>
-                <ion-col><strong>DATE</strong></ion-col>
-              </ion-row>
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>16.1 Documentation Considered</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-grid>
+          <ion-row>
+            <ion-col><strong>AUTHOR</strong></ion-col>
+            <ion-col><strong>SPECIALITY</strong></ion-col>
+            <ion-col><strong>DOCUMENT</strong></ion-col>
+            <ion-col><strong>DATE</strong></ion-col>
+          </ion-row>
     
-              <ion-row>
-                <ion-col>Attorney</ion-col>
-                <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[0].speciality" name="speciality0"></ion-input></ion-col>
-                <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[0].document" name="document0"></ion-input></ion-col>
-                <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[0].date" name="date0"></ion-datetime></ion-col>
-              </ion-row>
+          <ion-row>
+            <ion-col>Attorney</ion-col>
+            <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[0].speciality" name="speciality0"></ion-input></ion-col>
+            <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[0].document" name="document0"></ion-input></ion-col>
+            <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[0].date" name="date0"></ion-datetime></ion-col>
+          </ion-row>
     
-              <ion-row>
-                <ion-col>Orthopedic Surgeon</ion-col>
-                <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[1].speciality" name="speciality1"></ion-input></ion-col>
-                <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[1].document" name="document1"></ion-input></ion-col>
-                <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[1].date" name="date1"></ion-datetime></ion-col>
-              </ion-row>
+          <ion-row>
+            <ion-col>Orthopedic Surgeon</ion-col>
+            <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[1].speciality" name="speciality1"></ion-input></ion-col>
+            <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[1].document" name="document1"></ion-input></ion-col>
+            <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[1].date" name="date1"></ion-datetime></ion-col>
+          </ion-row>
     
-              <ion-row>
-                <ion-col>Radiologist</ion-col>
-                <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[2].speciality" name="speciality2"></ion-input></ion-col>
-                <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[2].document" name="document2"></ion-input></ion-col>
-                <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[2].date" name="date2"></ion-datetime></ion-col>
-              </ion-row>
+          <ion-row>
+            <ion-col>Radiologist</ion-col>
+            <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[2].speciality" name="speciality2"></ion-input></ion-col>
+            <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[2].document" name="document2"></ion-input></ion-col>
+            <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[2].date" name="date2"></ion-datetime></ion-col>
+          </ion-row>
     
-              <ion-row>
-                <ion-col>General Practitioner</ion-col>
-                <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[3].speciality" name="speciality3"></ion-input></ion-col>
-                <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[3].document" name="document3"></ion-input></ion-col>
-                <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[3].date" name="date3"></ion-datetime></ion-col>
-              </ion-row>
+          <ion-row>
+            <ion-col>General Practitioner</ion-col>
+            <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[3].speciality" name="speciality3"></ion-input></ion-col>
+            <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[3].document" name="document3"></ion-input></ion-col>
+            <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[3].date" name="date3"></ion-datetime></ion-col>
+          </ion-row>
     
-              <ion-row>
-                <ion-col>Hospital</ion-col>
-                <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[4].speciality" name="speciality4"></ion-input></ion-col>
-                <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[4].document" name="document4"></ion-input></ion-col>
-                <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[4].date" name="date4"></ion-datetime></ion-col>
-              </ion-row>
-    
-            </ion-grid>
-          </ion-card-content>
-    </ion-card> 
-
-
-    <ion-card>                  
-      <ion-card-header>
-        <ion-card-title>Medical history</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>   
+          <ion-row>
+            <ion-col>Hospital</ion-col>
+            <ion-col><ion-input placeholder="Speciality" [(ngModel)]="documentation[4].speciality" name="speciality4"></ion-input></ion-col>
+            <ion-col><ion-input placeholder="Document" [(ngModel)]="documentation[4].document" name="document4"></ion-input></ion-col>
+            <ion-col><ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="documentation[4].date" name="date4"></ion-datetime></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-accordion>
+     
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>Medical History</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isHealthyBeforeAccident" name="isHealthyBeforeAccident"></ion-checkbox>
-          <ion-label>{{client.name}} reported that he was healthy prior to the accident under review.  He had no chronic illnesses, underwent surgeries and was not taking any medication?</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isHealthyBeforeAccident" name="isHealthyBeforeAccident" slot="start"></ion-checkbox>
+          <ion-label>{{client.name}} reported that he was healthy prior to the accident under review. He had no chronic illnesses, underwent surgeries, and was not taking any medication?</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isHealthyBeforeAccident">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.healthyBeforeAccidentDetails" name="healthyBeforeAccidentDetails"></ion-textarea>
         </ion-item>
-
-      
-        <ion-item >
-          <ion-checkbox [(ngModel)]="medicalBackground.isOtherAccidentsDenied" name="isOtherAccidentsDenied"></ion-checkbox>
+    
+        <ion-item>
+          <ion-checkbox [(ngModel)]="medicalBackground.isOtherAccidentsDenied" name="isOtherAccidentsDenied" slot="start"></ion-checkbox>
           <ion-label>He denied being involved in any other accidents prior or since the accident under review?</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isOtherAccidentsDenied">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.otherAccidentsDeniedDetails" name="otherAccidentsDeniedDetails"></ion-textarea>
         </ion-item>
-
+    
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isMedicalHistoryOther" name="isMedicalHistoryOther"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isMedicalHistoryOther" name="isMedicalHistoryOther" slot="start"></ion-checkbox>
           <ion-label>Other</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isMedicalHistoryOther">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.medicalHistoryOther" name="medicalHistoryOther"></ion-textarea>
         </ion-item>
-      
-      </ion-card-content>
-    </ion-card>
-
-    <!-- Section 16.3: Accident Details -->
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Date and details of the accident, as reported by {{client.name}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
         
-        <!-- 16.3.5 He suffered a loss of consciousness -->
-        <ion-item >
-          <ion-checkbox [(ngModel)]="medicalBackground.wasInVehicleAccident" name="wasInVehicleAccident"></ion-checkbox>
-          <ion-label >On DOA he was involved in a motor vehicle accident while travelling as a front seat passenger in a taxi.</ion-label>
+      </div>
+    </ion-accordion>
+    
+    <!-- Section 16.3: Accident Details -->
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>Date and details of the accident, as reported by {{client.name}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+    
+        <!-- He was involved in a motor vehicle accident -->
+        <ion-item>
+          <ion-checkbox [(ngModel)]="medicalBackground.wasInVehicleAccident" name="wasInVehicleAccident" slot="start"></ion-checkbox>
+          <ion-label>On DOA he was involved in a motor vehicle accident while travelling as a front seat passenger in a taxi.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.wasInVehicleAccident">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.vehicleAccidentDetails" name="vehicleAccidentDetails"></ion-textarea>
         </ion-item>
+    
+        <!-- He was involved in a pedestrian accident -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.wasInPedestrianAccident" name="wasInPedestrianAccident"></ion-checkbox>
-          <ion-label>On DOA he was involved in a pedestrian vehicle accident.  He was walking next to the road when he was hit by an oncoming vehicle.</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.wasInPedestrianAccident" name="wasInPedestrianAccident" slot="start"></ion-checkbox>
+          <ion-label>On DOA he was involved in a pedestrian vehicle accident. He was walking next to the road when he was hit by an oncoming vehicle.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.wasInPedestrianAccident">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.pedestrianAccidentDetails" name="pedestrianAccidentDetails"></ion-textarea>
         </ion-item>
+    
+        <!-- Loss of consciousness at the scene -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.hadBriefLossOfConsciousness" name="hadBriefLossOfConsciousness"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.hadBriefLossOfConsciousness" name="hadBriefLossOfConsciousness" slot="start"></ion-checkbox>
           <ion-label>He lost consciousness briefly but regained it at the scene of the accident before the ambulance arrived.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.hadBriefLossOfConsciousness">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.briefConsciousnessDetails" name="briefConsciousnessDetails"></ion-textarea>
         </ion-item>
+    
+        <!-- Loss of consciousness in hospital -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.lostConsciousnessInHospital" name="lostConsciousnessInHospital"></ion-checkbox>
-          <ion-label>He suffered a loss of consciousness.  He just remembers waking up the next day in hospital as narrated to him by ___.</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.lostConsciousnessInHospital" name="lostConsciousnessInHospital" slot="start"></ion-checkbox>
+          <ion-label>He suffered a loss of consciousness. He just remembers waking up the next day in hospital as narrated to him by ___.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.lostConsciousnessInHospital">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.hospitalConsciousnessDetails" name="hospitalConsciousnessDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Loss of consciousness in ambulance -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.lostConsciousnessInAmbulance" name="lostConsciousnessInAmbulance"></ion-checkbox>
-          <ion-label>He suffered a loss of consciousness.  He just remembers waking up in the ambulance on the way to hospital.</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.lostConsciousnessInAmbulance" name="lostConsciousnessInAmbulance" slot="start"></ion-checkbox>
+          <ion-label>He suffered a loss of consciousness. He just remembers waking up in the ambulance on the way to hospital.</ion-label>
         </ion-item>
         <div *ngIf="medicalBackground.lostConsciousnessInAmbulance">
           <ion-item>
-            <ion-checkbox [(ngModel)]="medicalBackground.lostConsciousnessDuringAccident" name="lostConsciousnessDuringAccident"></ion-checkbox>
+            <ion-checkbox [(ngModel)]="medicalBackground.lostConsciousnessDuringAccident" name="lostConsciousnessDuringAccident" slot="start"></ion-checkbox>
             <ion-label>He suffered a loss of consciousness during the accident</ion-label>
           </ion-item>
           <ion-item *ngIf="medicalBackground.lostConsciousnessDuringAccident">
-            <ion-label position="floating">Details</ion-label>
+            <ion-label position="stacked">Details</ion-label>
             <ion-textarea [(ngModel)]="medicalBackground.duringAccidentDetails" name="duringAccidentDetails"></ion-textarea>
           </ion-item>
+    
           <ion-item>
-            <ion-checkbox [(ngModel)]="medicalBackground.cousinInjured" name="cousinInjured"></ion-checkbox>
+            <ion-checkbox [(ngModel)]="medicalBackground.cousinInjured" name="cousinInjured" slot="start"></ion-checkbox>
             <ion-label>His cousin was also injured in this accident</ion-label>
           </ion-item>
           <ion-item *ngIf="medicalBackground.cousinInjured">
-            <ion-label position="floating">Details</ion-label>
+            <ion-label position="stacked">Details</ion-label>
             <ion-textarea [(ngModel)]="medicalBackground.cousinInjuryDetails" name="cousinInjuryDetails"></ion-textarea>
           </ion-item>
+    
           <ion-item>
-            <ion-checkbox [(ngModel)]="medicalBackground.nobodyElseInjured" name="nobodyElseInjured"></ion-checkbox>
+            <ion-checkbox [(ngModel)]="medicalBackground.nobodyElseInjured" name="nobodyElseInjured" slot="start"></ion-checkbox>
             <ion-label>Nobody else was injured in the accident</ion-label>
           </ion-item>
           <ion-item *ngIf="medicalBackground.nobodyElseInjured">
-            <ion-label position="floating">Details</ion-label>
+            <ion-label position="stacked">Details</ion-label>
             <ion-textarea [(ngModel)]="medicalBackground.nobodyElseInjuryDetails" name="nobodyElseInjuryDetails"></ion-textarea>
           </ion-item>
         </div>
-
+    
+        <!-- Other -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isDateAndDetailsOther" name="isDateAndDetailsOther"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isDateAndDetailsOther" name="isDateAndDetailsOther" slot="start"></ion-checkbox>
           <ion-label>Other</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isDateAndDetailsOther">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.dateAndDetailsOther" name="dateAndDetailsOther"></ion-textarea>
         </ion-item>
+    
+      </div>
+    </ion-accordion>
 
-
-
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Injuries sustained </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <!-- Section 16.4.1 - According to MXX (Client) -->
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>Injuries Sustained</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+    
+        <!-- Section 16.4.1 - According to Client -->
         <div *ngFor="let injury of medicalBackground.clientInjuries; let i = index">
           <ion-item>
             <ion-label>Injury according to {{client.name}} ({{i + 1}})</ion-label>
@@ -199,61 +208,62 @@
             <ion-button (click)="removeClientInjury(i)">Remove Injury</ion-button>
           </ion-item>
         </div>
-        <ion-button (click)="addClientInjury()">Add Injury According  {{client.name}}: </ion-button>
-
+        <ion-button (click)="addClientInjury()">Add Injury According to {{client.name}}: </ion-button>
+    
         <!-- Section 16.4.2 - According to RAF1 -->
-        <ion-input  [(ngModel)]="medicalBackground.raf1Dr" name="raf1Dr" label="Raf1 Dr" label-placement="floating" fill="solid" placeholder="Raf1 Dr"></ion-input>
+        <ion-input [(ngModel)]="medicalBackground.raf1Dr" name="raf1Dr" label="Raf1 Dr" label-placement="floating" fill="solid" placeholder="Raf1 Dr"></ion-input>
         <div *ngFor="let injury of medicalBackground.raf1Injuries; let i = index">
           <ion-item>
             <ion-label>Injury according to RAF1 ({{i + 1}})</ion-label>
             <ion-textarea [(ngModel)]="injury.detail" name="raf1Injury{{i}}"></ion-textarea>
           </ion-item>
           <ion-item>
-            <ion-button (click)="removeRaf1Injury(i)">Remove Raf1 Injury</ion-button>
+            <ion-button (click)="removeRaf1Injury(i)">Remove RAF1 Injury</ion-button>
           </ion-item>
         </div>
         <ion-button (click)="addRaf1Injury()">Add Injury According to the RAF1 (completed by Dr {{medicalBackground.raf1Dr}}): </ion-button>
-
-        <ion-input  [(ngModel)]="medicalBackground.raf4Dr" name="raf4Dr" label="Raf4 Dr" label-placement="floating" fill="solid" placeholder="Raf4 Dr"></ion-input>
-        <!-- Section 16.4.3 - According to RAF4 with checkboxes and details for (a), (b), (c), (d) -->
+    
+        <!-- Section 16.4.3 - According to RAF4 -->
+        <ion-input [(ngModel)]="medicalBackground.raf4Dr" name="raf4Dr" label="Raf4 Dr" label-placement="floating" fill="solid" placeholder="Raf4 Dr"></ion-input>
+    
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isRaf4Diagnosis" name="isRaf4Diagnosis"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isRaf4Diagnosis" name="isRaf4Diagnosis" slot="start"></ion-checkbox>
           <ion-label>Diagnosis Notes</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isRaf4Diagnosis">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.raf4DiagnosisDetails" name="raf4DiagnosisDetails"></ion-textarea>
         </ion-item>
-
+    
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isRaf4Notes" name="isRaf4Notes"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isRaf4Notes" name="isRaf4Notes" slot="start"></ion-checkbox>
           <ion-label>This RAF4 notes the following</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isRaf4Notes">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.raf4NotesDetails" name="raf4NotesDetails"></ion-textarea>
         </ion-item>
-
+    
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isRaf4MMI" name="isRaf4MMI"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isRaf4MMI" name="isRaf4MMI" slot="start"></ion-checkbox>
           <ion-label>He has reached/not reached MMI</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isRaf4MMI">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.raf4MMIDetails" name="raf4MMIDetails"></ion-textarea>
         </ion-item>
-
+    
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isRaf4WPI" name="isRaf4WPI"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isRaf4WPI" name="isRaf4WPI" slot="start"></ion-checkbox>
           <ion-label>Total Orthopaedic WPI = ___%</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isRaf4WPI">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.raf4WPIDetails" name="raf4WPIDetails"></ion-textarea>
         </ion-item>
-
-        <ion-input  [(ngModel)]="medicalBackground.hospitalName" name="Hospital Name" label="Hospital" label-placement="floating" fill="solid" placeholder="Hospital Name"></ion-input>
+    
         <!-- Section 16.4.4 - According to Hospital -->
+        <ion-input [(ngModel)]="medicalBackground.hospitalName" name="Hospital Name" label="Hospital" label-placement="floating" fill="solid" placeholder="Hospital Name"></ion-input>
         <div *ngFor="let injury of medicalBackground.hospitalInjuries; let i = index">
           <ion-item>
             <ion-label>Injury according to Hospital ({{i + 1}})</ion-label>
@@ -263,28 +273,31 @@
             <ion-button (click)="removeHospitalInjury(i)">Remove Hospital Injury</ion-button>
           </ion-item>
         </div>
-        <ion-button (click)="addHospitalInjury()">Add Injury According to the {{medicalBackground.hospitalName}} Hospital notes </ion-button>
-
+        <ion-button (click)="addHospitalInjury()">Add Injury According to the {{medicalBackground.hospitalName}} Hospital notes</ion-button>
+    
         <!-- Other Details -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isDateAndDetailsOther" name="isDateAndDetailsOther"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isDateAndDetailsOther" name="isDateAndDetailsOther" slot="start"></ion-checkbox>
           <ion-label>Other</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isDateAndDetailsOther">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.dateAndDetailsOther" name="dateAndDetailsOther"></ion-textarea>
         </ion-item>
-
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-header>
-          <ion-card-title>Diagnosis </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-        <ion-input  [(ngModel)]="medicalBackground.orthopaedicDr" name="OrthopaedicDr" label="Dr" label-placement="floating" fill="solid" placeholder="OrthopaedicDr"></ion-input>
-        <!-- Section 16.4.4 - According to Hospital -->
+    
+      </div>
+    </ion-accordion>
+    
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>Diagnosis</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        
+        <!-- Orthopaedic Doctor Input -->
+        <ion-input [(ngModel)]="medicalBackground.orthopaedicDr" name="OrthopaedicDr" label="Dr" label-placement="floating" fill="solid" placeholder="Orthopaedic Dr"></ion-input>
+    
+        <!-- Diagnosis Section -->
         <div *ngFor="let diagnosis of medicalBackground.orthopaedicDiagnosis; let i = index">
           <ion-item>
             <ion-label>Injury according to Hospital ({{i + 1}})</ion-label>
@@ -295,108 +308,116 @@
           </ion-item>
         </div>
         <ion-button (click)="addDiagnosis()">Add Injury According to the Orthopaedic Medico-Legal Report by Dr {{medicalBackground.orthopaedicDr}}: </ion-button>
-
-        <!-- Other Details -->
+    
+        <!-- Other Details Section -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isOrthopaedicDiagnosisOther" name="isOrthopaedicDiagnosisOther"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isOrthopaedicDiagnosisOther" name="isOrthopaedicDiagnosisOther" slot="start"></ion-checkbox>
           <ion-label>Other</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isOrthopaedicDiagnosisOther">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.orthopaedicDiagnosisOther" name="orthopaedicDiagnosisOther"></ion-textarea>
         </ion-item>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Intervention - According to {{client.name}} </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <!-- Section 16.6.1 - According to MXX -->
+    
+      </div>
+    </ion-accordion>
+    
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>Intervention - According to {{client.name}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+    
+        <!-- Taken to Hospital -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isTakenToHospital" name="isTakenToHospital"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isTakenToHospital" name="isTakenToHospital" slot="start"></ion-checkbox>
           <ion-label>Following the accident, he was taken to hospital by ambulance</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isTakenToHospital">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.takenToHospitalDetails" name="takenToHospitalDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Admitted for Days -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isAdmittedForDays" name="isAdmittedForDays"></ion-checkbox>
-          <ion-label>He was admitted for about 4 days, during which time he received conservative treatment consisting of X-rays, a Plaster of Paris cast was applied and administration of analgesics.</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isAdmittedForDays" name="isAdmittedForDays" slot="start"></ion-checkbox>
+          <ion-label>He was admitted for about 4 days, receiving conservative treatment, X-rays, a Plaster of Paris cast, and analgesics.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isAdmittedForDays">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.admittedForDaysDetails" name="admittedForDaysDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Transferred to Another Hospital -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isTransferredFor3to4Days" name="isTransferredFor3to4Days"></ion-checkbox>
-          <ion-label>He was then transferred to hospital, where he was admitted for another 3 to 4 days, during which time he received another Plaster of Paris cast, control X-rays, traction, and analgesics.</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isTransferredFor3to4Days" name="isTransferredFor3to4Days" slot="start"></ion-checkbox>
+          <ion-label>He was transferred to another hospital, where he stayed for another 3 to 4 days.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isTransferredFor3to4Days">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.transferredFor3to4DaysDetails" name="transferredFor3to4DaysDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Transferred to Themba Hospital -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isTransferredToThemba" name="isTransferredToThemba"></ion-checkbox>
-          <ion-label>He was transferred to Themba Hospital by means of ambulance</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isTransferredToThemba" name="isTransferredToThemba" slot="start"></ion-checkbox>
+          <ion-label>He was transferred to Themba Hospital by ambulance.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isTransferredToThemba">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.transferredToThembaDetails" name="transferredToThembaDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Discharged with Equipment -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isDischargedWithEquipment" name="isDischargedWithEquipment"></ion-checkbox>
-          <ion-label>He was discharged with a wheelchair, crutches, a soft / hard neck collar (which he used for a period of {{medicalBackground.neckCollarDuration}} months.  He did not receive analgesics to take home (as far as he can remember).</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isDischargedWithEquipment" name="isDischargedWithEquipment" slot="start"></ion-checkbox>
+          <ion-label>He was discharged with a wheelchair, crutches, a neck collar (used for {{medicalBackground.neckCollarDuration}} months), and no analgesics.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isDischargedWithEquipment">
-          <ion-label position="floating">Months used neck collar</ion-label>
+          <ion-label position="stacked">Months used neck collar</ion-label>
           <ion-input [(ngModel)]="medicalBackground.neckCollarDuration" name="neckCollarDuration"></ion-input>
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.dischargedWithEquipmentDetails" name="dischargedWithEquipmentDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Discharged with Crutches -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isDischargedWithCrutches" name="isDischargedWithCrutches"></ion-checkbox>
-          <ion-label>He was discharged home with crutches, a cement cast on his left lower leg and ‘take home” analgesics.</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isDischargedWithCrutches" name="isDischargedWithCrutches" slot="start"></ion-checkbox>
+          <ion-label>He was discharged with crutches, a cement cast on his leg, and analgesics.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isDischargedWithCrutches">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.dischargedWithCrutchesDetails" name="dischargedWithCrutchesDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Cast Removed -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isCastRemoved" name="isCastRemoved"></ion-checkbox>
-          <ion-label>The cast was removed after a period of {{medicalBackground.castDuration}}.</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isCastRemoved" name="isCastRemoved" slot="start"></ion-checkbox>
+          <ion-label>The cast was removed after {{medicalBackground.castDuration}}.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isCastRemoved">
-          <ion-label position="floating">Duration of cast</ion-label>
+          <ion-label position="stacked">Duration of cast</ion-label>
           <ion-input [(ngModel)]="medicalBackground.castDuration" name="castDuration"></ion-input>
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.castRemovedDetails" name="castRemovedDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Follow-up Appointments -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isFollowUpAppointments" name="isFollowUpAppointments"></ion-checkbox>
-          <ion-label>He went back for follow-up appointments to {{medicalBackground.followUpLocation}}, to which he had to travel at the cost of R {{medicalBackground.travelCost}} single trip (one way / both ways).</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isFollowUpAppointments" name="isFollowUpAppointments" slot="start"></ion-checkbox>
+          <ion-label>He attended follow-up appointments at {{medicalBackground.followUpLocation}} with a travel cost of R {{medicalBackground.travelCost}} per trip.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isFollowUpAppointments">
-          <ion-label position="floating">Follow-up hospital/clinic</ion-label>
+          <ion-label position="stacked">Follow-up hospital/clinic</ion-label>
           <ion-input [(ngModel)]="medicalBackground.followUpLocation" name="followUpLocation"></ion-input>
-          <ion-label position="floating">Cost of travel (one way/both ways)</ion-label>
+          <ion-label position="stacked">Cost of travel (one way/both ways)</ion-label>
           <ion-input [(ngModel)]="medicalBackground.travelCost" name="travelCost"></ion-input>
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.followUpDetails" name="followUpDetails"></ion-textarea>
         </ion-item>
-
-
-        <ion-input  [(ngModel)]="medicalBackground.raf1InterventionDr" name="raf1InterventionDr" label="Dr" label-placement="floating" fill="solid" placeholder="Raf1 Intervention Dr"></ion-input>
-        <!-- Section 16.4.4 - According to Hospital -->
+    
+        <!-- RAF1 Interventions -->
+        <ion-input [(ngModel)]="medicalBackground.raf1InterventionDr" name="raf1InterventionDr" label="Dr" label-placement="floating" fill="solid" placeholder="Raf1 Intervention Dr"></ion-input>
         <div *ngFor="let intervention of medicalBackground.raf1Interventions; let i = index">
           <ion-item>
             <ion-label>Injury according to Hospital ({{i + 1}})</ion-label>
@@ -406,11 +427,10 @@
             <ion-button (click)="removeRaf1Intervention(i)">Remove Intervention</ion-button>
           </ion-item>
         </div>
-        <ion-button (click)="addRaf1Intervention()">Add Intervention According to Dr {{medicalBackground.raf1InterventionDr}} (RAF1 form): </ion-button>
-
-
-        <ion-input  [(ngModel)]="medicalBackground.hospitalNameRecords" name="hospitalNameRecords" label="Record" label-placement="floating" fill="solid" placeholder="Hospital Name"></ion-input>
-        <!-- Section 16.4.4 - According to Hospital -->
+        <ion-button (click)="addRaf1Intervention()">Add Intervention According to Dr {{medicalBackground.raf1InterventionDr}} (RAF1 form):</ion-button>
+    
+        <!-- Hospital Records -->
+        <ion-input [(ngModel)]="medicalBackground.hospitalNameRecords" name="hospitalNameRecords" label="Record" label-placement="floating" fill="solid" placeholder="Hospital Name"></ion-input>
         <div *ngFor="let intervention of medicalBackground.hospitalInterventions; let i = index">
           <ion-item>
             <ion-label>Injury according to Hospital ({{i + 1}})</ion-label>
@@ -420,178 +440,199 @@
             <ion-button (click)="removeHospitalIntervention(i)">Remove Intervention</ion-button>
           </ion-item>
         </div>
-        <ion-button (click)="addHospitalIntervention()">Add Intervention According to the {{medicalBackground.hospitalNameRecords}} Hospital records: </ion-button>
-       </ion-card-content>
-    </ion-card>
-
+        <ion-button (click)="addHospitalIntervention()">Add Intervention According to the {{medicalBackground.hospitalNameRecords}} Hospital records:</ion-button>
+    
+      </div>
+    </ion-accordion>
+    
     <!-- Section 16.7 - Disruption / care arrangements during recovery -->
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Disruption / care arrangements during recovery, as reported by {{client.name}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>Disruption / Care Arrangements During Recovery, as reported by {{client.name}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+    
+        <!-- Assistance with Self-Care -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isSelfCareAssistance" name="isSelfCareAssistance"></ion-checkbox>
-          <ion-label>{{client.name}} reported that he required assistance with self-care (washing and dressing), as well as other activities of daily living chores during his recovery period.  He was reliant on the care of his___ for a period of approximately ___ post-discharge</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isSelfCareAssistance" name="isSelfCareAssistance" slot="start"></ion-checkbox>
+          <ion-label>{{client.name}} reported that he required assistance with self-care (washing and dressing), as well as other activities of daily living chores during his recovery period. He was reliant on the care of his ___ for a period of approximately ___ post-discharge.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isSelfCareAssistance">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.selfCareAssistanceDetails" name="selfCareAssistanceDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Unable to Work -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isUnableToWork" name="isUnableToWork"></ion-checkbox>
-          <ion-label>{{client.name}} reported that he was unable to work for approximately ___ after the aur and he received ___ remuneration during this period of absence</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isUnableToWork" name="isUnableToWork" slot="start"></ion-checkbox>
+          <ion-label>{{client.name}} reported that he was unable to work for approximately ___ after the accident and he received ___ remuneration during this period of absence.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isUnableToWork">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.unableToWorkDetails" name="unableToWorkDetails"></ion-textarea>
         </ion-item>
     
+        <!-- Return to Pre-Accident Capacity -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isReturnToCapacity" name="isReturnToCapacity"></ion-checkbox>
-          <ion-label>He returned to his pre-accident capacity</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isReturnToCapacity" name="isReturnToCapacity" slot="start"></ion-checkbox>
+          <ion-label>He returned to his pre-accident capacity.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isReturnToCapacity">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.returnToCapacityDetails" name="returnToCapacityDetails"></ion-textarea>
         </ion-item>
     
+        <!-- Immediate Return -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isImmediatelyReturn" name="isImmediatelyReturn"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="medicalBackground.isImmediatelyReturn" name="isImmediatelyReturn" slot="start"></ion-checkbox>
           <ion-label>Immediately</ion-label>
         </ion-item>
-        <ion-item *ngIf="medicalBackground.immediatelyReturn">
-          <ion-label position="floating">Details</ion-label>
+        <ion-item *ngIf="medicalBackground.isImmediatelyReturn">
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.immediatelyReturn" name="immediatelyReturn"></ion-textarea>
         </ion-item>
     
+        <!-- No Difficulties -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isNoDifficulties" name="isNoDifficulties"></ion-checkbox>
-          <ion-label>Without any difficulties</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isNoDifficulties" name="isNoDifficulties" slot="start"></ion-checkbox>
+          <ion-label>Without any difficulties.</ion-label>
         </ion-item>
-        <ion-item *ngIf="medicalBackground.noDifficulties">
-          <ion-label position="floating">Details</ion-label>
+        <ion-item *ngIf="medicalBackground.isNoDifficulties">
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.noDifficulties" name="noDifficulties"></ion-textarea>
         </ion-item>
     
+        <!-- Light Duty -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isLightDuty" name="isLightDuty"></ion-checkbox>
-          <ion-label>Was placed on light duty for a period of ___ before he resumed his full pre-accident capacity</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isLightDuty" name="isLightDuty" slot="start"></ion-checkbox>
+          <ion-label>Was placed on light duty for a period of ___ before he resumed his full pre-accident capacity.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isLightDuty">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.lightDutyDetails" name="lightDutyDetails"></ion-textarea>
         </ion-item>
     
+        <!-- Work Difficulties -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isWorkDifficulties" name="isWorkDifficulties"></ion-checkbox>
-          <ion-label>(17.3.f) MXX reported the following difficulties/constraints after resuming full capacity</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isWorkDifficulties" name="isWorkDifficulties" slot="start"></ion-checkbox>
+          <ion-label>{{client.name}} reported the following difficulties/constraints after resuming full capacity.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isWorkDifficulties">
-          <ion-label position="floating">Details of work difficulties/constraints</ion-label>
+          <ion-label position="stacked">Details of work difficulties/constraints</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.workDifficultiesDetails" name="workDifficultiesDetails"></ion-textarea>
         </ion-item>
-
-      </ion-card-content>
-    </ion-card>
-
+    
+      </div>
+    </ion-accordion>
+    
     <!-- Section 16.8 - Current health, medication, and rehabilitation therapies -->
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Current health, medication, and rehabilitation therapies, as reported by {{client.name}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
+    <ion-accordion style="background-color: green;">
+      <ion-item slot="header" color="green">
+        <ion-label>Current health, medication, and rehabilitation therapies, as reported by {{client.name}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+    
         <h2>Related to the accident under review, according to {{client.name}}:</h2>
-        <!-- 16.8.1 Related to the accident under review -->
+    
+        <!-- Follow-up Care -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isFollowUpCare" name="isFollowUpCare"></ion-checkbox>
-          <ion-label>He attended follow-up care at ___ / from various institutions.  He travelled by ___ (taxi or specify) at the cost of R0-00 (round trip) for follow-up treatment / care.</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isFollowUpCare" name="isFollowUpCare" slot="start"></ion-checkbox>
+          <ion-label>He attended follow-up care at ___ / from various institutions, travelling by ___ (taxi or specify) at a cost of R0-00 (round trip) for follow-up treatment/care.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isFollowUpCare">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.followUpCareDetails" name="followUpCareDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Pain Medication -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isPainMedication" name="isPainMedication"></ion-checkbox>
-          <ion-label>{{client.name}} reported occasional us of over-the-counter pain medication (___) to manage pain symptoms</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isPainMedication" name="isPainMedication" slot="start"></ion-checkbox>
+          <ion-label>{{client.name}} reported occasional use of over-the-counter pain medication (___) to manage pain symptoms.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isPainMedication">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.painMedicationDetails" name="painMedicationDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Prescribed Medication -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isPrescribedMedication" name="isPrescribedMedication"></ion-checkbox>
-          <ion-label>Currently, he uses the following over the counter/chronic/prescriubed medication</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isPrescribedMedication" name="isPrescribedMedication" slot="start"></ion-checkbox>
+          <ion-label>Currently, he uses the following over-the-counter/chronic/prescribed medication.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isPrescribedMedication">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.prescribedMedicationDetails" name="prescribedMedicationDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Physiotherapy Benefit -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isBenefitOfPhysiotherapy" name="isBenefitOfPhysiotherapy"></ion-checkbox>
-          <ion-label>He did not have the benefit of physiotherapy</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isBenefitOfPhysiotherapy" name="isBenefitOfPhysiotherapy" slot="start"></ion-checkbox>
+          <ion-label>He did not have the benefit of physiotherapy.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isBenefitOfPhysiotherapy">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.benefitOfPhysiotherapyDetails" name="benefitOfPhysiotherapyDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Attended Physiotherapy -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isPhysiotherapy" name="isPhysiotherapy"></ion-checkbox>
-          <ion-label>He attended outpatient physiotherapy and travelled to appointments by means of ___ at the rate of ___ round trip for ______ sessions</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isPhysiotherapy" name="isPhysiotherapy" slot="start"></ion-checkbox>
+          <ion-label>He attended outpatient physiotherapy, travelling by ___ at a rate of ___ per round trip for ___ sessions.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isPhysiotherapy">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.physiotherapyDetails" name="physiotherapyDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Other Rehabilitation -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isOtherRehabilitation" name="isOtherRehabilitation"></ion-checkbox>
-          <ion-label>Other rehabilitative care</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isOtherRehabilitation" name="isOtherRehabilitation" slot="start"></ion-checkbox>
+          <ion-label>Other rehabilitative care.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isOtherRehabilitation">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.otherRehabilitationDetails" name="otherRehabilitationDetails"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Medication Obtained -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isObtainsMedication" name="isObtainsMedication"></ion-checkbox>
-          <ion-label>He obtains his medication through his medical aid (including self-payment gap)/self-payment/state hospital/other (sponsored or paid by his family or so).</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isObtainsMedication" name="isObtainsMedication" slot="start"></ion-checkbox>
+          <ion-label>He obtains his medication through medical aid/self-payment/state hospital/other (sponsored or paid by family).</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isObtainsMedication">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.obtainsMedicationDetails" name="obtainsMedicationDetails"></ion-textarea>
         </ion-item>
-
+    
         <h2>Current state of health, other than related to the accident:</h2>
-        <!-- 16.8.2 Current state of health, other than related to the accident -->
+    
+        <!-- Current Healthy State -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isHealthyState" name="isHealthyState"></ion-checkbox>
-          <ion-label>He reported being healthy at present, taking no (chronic, prescribed or self) medication at present</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isHealthyState" name="isHealthyState" slot="start"></ion-checkbox>
+          <ion-label>He reported being healthy, taking no medication (chronic, prescribed, or self) at present.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isHealthyState">
-          <ion-label position="floating">Present medical conditions</ion-label>
+          <ion-label position="stacked">Present medical conditions</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.presentMedicalConditions" name="presentMedicalConditions"></ion-textarea>
         </ion-item>
-
+    
+        <!-- Presenting Conditions -->
         <ion-item>
-          <ion-checkbox [(ngModel)]="medicalBackground.isPresentingConditions" name="isPresentingConditions"></ion-checkbox>
-          <ion-label>He does not present with any medical conditions / presents with the following medical conditions</ion-label>
+          <ion-checkbox [(ngModel)]="medicalBackground.isPresentingConditions" name="isPresentingConditions" slot="start"></ion-checkbox>
+          <ion-label>He does not present with any medical conditions / presents with the following medical conditions.</ion-label>
         </ion-item>
         <ion-item *ngIf="medicalBackground.isPresentingConditions">
-          <ion-label position="floating">Details</ion-label>
+          <ion-label position="stacked">Details</ion-label>
           <ion-textarea [(ngModel)]="medicalBackground.presentingConditionsDetails" name="presentingConditionsDetails"></ion-textarea>
         </ion-item>
-
-      </ion-card-content>
-    </ion-card>
+    
+      </div>
+    </ion-accordion>
+    
 
     <!-- Submit Button -->
     <ion-button expand="block" type="submit" color="primary">Save Medical Background</ion-button>
+    </ion-accordion-group>
   </form>
+
 </ion-content>

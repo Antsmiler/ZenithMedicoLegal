@@ -271,3 +271,4 @@ D:\Projects\ZenithMedicoLegal\PinnacleMedicoLegalBackend\obj\Debug\net8.0\refint
 D:\Projects\ZenithMedicoLegal\PinnacleMedicoLegalBackend\obj\Debug\net8.0\PinnacleMedicoLegalBackend.pdb
 D:\Projects\ZenithMedicoLegal\PinnacleMedicoLegalBackend\obj\Debug\net8.0\PinnacleMedicoLegalBackend.genruntimeconfig.cache
 D:\Projects\ZenithMedicoLegal\PinnacleMedicoLegalBackend\obj\Debug\net8.0\ref\PinnacleMedicoLegalBackend.dll
+E:\Own\Projects\ZenithMedicoLegal\PinnacleMedicoLegalBackend\obj\Debug\net8.0\PinnacleMedicoLegalBackend.sourcelink.json

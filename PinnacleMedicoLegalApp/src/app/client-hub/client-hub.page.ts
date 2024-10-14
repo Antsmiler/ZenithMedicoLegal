@@ -18,7 +18,7 @@ export class ClientHubPage implements OnInit {
     { name: 'Section C: Intervention, Therapy, and Recommendations', status: 'not-started' ,route:''},
     { name: 'Section D: Medical Background', status: 'not-started' ,route:'/medical-background'},
     { name: 'Section E: Current Complaints', status: 'not-started' ,route:'/current-complaints'},
-    { name: 'Section F: Activity Profile', status: 'not-started',route:'' },
+    { name: 'Section F: Activity Profile', status: 'not-started',route:'/daily-activity-living' },
     { name: 'Section G: Occupational Performance', status: 'not-started',route:'' },
     { name: 'Section H: Outcome Summary and Conclusions', status: 'not-started' ,route:''},
     { name: 'Section I: Appendix', status: 'not-started' ,route:''},

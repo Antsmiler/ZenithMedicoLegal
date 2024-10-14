@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'current-complaints',
     loadChildren: () => import('./sections/current-complaints/current-complaints/current-complaints.module').then( m => m.CurrentComplaintsPageModule)
   },
+  {
+    path: 'daily-activity-living',
+    loadChildren: () => import('./sections/daily-activity-living/daily-activity-living.module').then( m => m.DailyActivityLivingPageModule)
+  },
 
  // Route for editing
   //{ path: 'section/:name', loadChildren: () => import('./section/section.module').then(m => m.SectionPageModule) },

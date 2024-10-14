@@ -1,0 +1,1110 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>daily-activity-living</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-accordion-group>
+    
+    <ion-accordion value="personal-social-background">
+      <ion-item slot="header" color="green">
+        <ion-label>Personal & Social Background</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+  
+        <!-- Partner Section -->
+        <ion-item>
+          <ion-label>Partner</ion-label>
+          <ion-button (click)="addPartner()">Add Partner</ion-button>
+        </ion-item>
+        <div *ngFor="let partner of partners">
+          <ion-item>
+            <ion-label position="stacked">Partner Name</ion-label>
+            <ion-input [(ngModel)]="partner.name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Age</ion-label>
+            <ion-input [(ngModel)]="partner.age" type="number"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Employment</ion-label>
+            <ion-input [(ngModel)]="partner.employment"></ion-input>
+          </ion-item>
+          <ion-button color="danger" (click)="removePartner(partner)">Remove Partner</ion-button>
+        </div>
+  
+        <!-- Parent Section -->
+        <ion-item>
+          <ion-label>Parent</ion-label>
+          <ion-button (click)="addParent()">Add Parent</ion-button>
+        </ion-item>
+        <div *ngFor="let parent of parents">
+          <ion-item>
+            <ion-label position="stacked">Parent Name</ion-label>
+            <ion-input [(ngModel)]="parent.name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Age</ion-label>
+            <ion-input [(ngModel)]="parent.age" type="number"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Relationship</ion-label>
+            <ion-input [(ngModel)]="parent.relationship"></ion-input>
+          </ion-item>
+          <ion-button color="danger" (click)="removeParent(parent)">Remove Parent</ion-button>
+        </div>
+  
+        <!-- Child Section -->
+        <ion-item>
+          <ion-label>Child</ion-label>
+          <ion-button (click)="addChild()">Add Child</ion-button>
+        </ion-item>
+        <div *ngFor="let child of children">
+          <ion-item>
+            <ion-label position="stacked">Child Name</ion-label>
+            <ion-input [(ngModel)]="child.name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Age</ion-label>
+            <ion-input [(ngModel)]="child.age" type="number"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">School</ion-label>
+            <ion-input [(ngModel)]="child.school"></ion-input>
+          </ion-item>
+          <ion-button color="danger" (click)="removeChild(child)">Remove Child</ion-button>
+        </div>
+  
+        <!-- Sibling Section -->
+        <ion-item>
+          <ion-label>Sibling</ion-label>
+          <ion-button (click)="addSibling()">Add Sibling</ion-button>
+        </ion-item>
+        <div *ngFor="let sibling of siblings">
+          <ion-item>
+            <ion-label position="stacked">Sibling Name</ion-label>
+            <ion-input [(ngModel)]="sibling.name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Age</ion-label>
+            <ion-input [(ngModel)]="sibling.age" type="number"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Relationship</ion-label>
+            <ion-input [(ngModel)]="sibling.relationship"></ion-input>
+          </ion-item>
+          <ion-button color="danger" (click)="removeSibling(sibling)">Remove Sibling</ion-button>
+        </div>
+  
+        <!-- Financial Dependents -->
+        <ion-item>
+          <ion-label position="stacked">Financial Dependents</ion-label>
+          <ion-textarea placeholder="Describe financial dependents" [(ngModel)]="financialDependents"></ion-textarea>
+        </ion-item>
+  
+        <!-- Additional Care Responsibilities -->
+        <ion-item>
+          <ion-label position="stacked">Additional Care Responsibilities</ion-label>
+          <ion-textarea placeholder="Describe additional care responsibilities" [(ngModel)]="additionalCareResponsibilities"></ion-textarea>
+        </ion-item>
+  
+        <!-- Personal Situation Changes -->
+        <ion-item>
+          <ion-label position="stacked">Personal Situation Changes (due to accident)</ion-label>
+          <ion-textarea placeholder="Describe personal situation changes" [(ngModel)]="personalSituationChanges"></ion-textarea>
+        </ion-item>
+  
+      </div>
+    </ion-accordion>
+
+    <!-- Residential Situation -->
+    <ion-accordion value="residential-situation">
+      <ion-item slot="header" color="green">
+        <ion-label>Residential Situation</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+  
+        <!-- Property Ownership -->
+        <ion-item>
+          <ion-label position="stacked">Do you own/rent the property?</ion-label>
+          <ion-select [(ngModel)]="residential.propertyOwnership" placeholder="Select">
+            <ion-select-option value="own">Own</ion-select-option>
+            <ion-select-option value="rent">Rent</ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <!-- Property Owner -->
+        <ion-item>
+          <ion-label position="stacked">The property is owned by:</ion-label>
+          <ion-input [(ngModel)]="residential.propertyOwner" placeholder="Owner's name"></ion-input>
+        </ion-item>
+  
+        <!-- Property Description -->
+        <ion-item>
+          <ion-label position="stacked">Description of property</ion-label>
+          <ion-textarea [(ngModel)]="residential.propertyDescription" placeholder="e.g., single/double story home..."></ion-textarea>
+        </ion-item>
+  
+        <!-- Number of Bedrooms -->
+        <ion-item>
+          <ion-label position="stacked">Number of bedrooms</ion-label>
+          <ion-input [(ngModel)]="residential.propertyBedrooms" type="number" placeholder="Enter number"></ion-input>
+        </ion-item>
+  
+        <!-- Steps/Stairs -->
+        <ion-item>
+          <ion-label position="stacked">Does the property have steps/stairs?</ion-label>
+          <ion-textarea [(ngModel)]="residential.stepsStairs" placeholder="e.g., The house has stairs..."></ion-textarea>
+        </ion-item>
+  
+        <!-- Residents Section -->
+        <ion-item>
+          <ion-label>People Residing at the Property</ion-label>
+          <ion-button (click)="addResident()">Add Resident</ion-button>
+        </ion-item>
+        <div *ngFor="let resident of residential.residents; let i = index">
+          <ion-item>
+            <ion-label position="stacked">Resident Name</ion-label>
+            <ion-input [(ngModel)]="resident.name" placeholder="Enter name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Age</ion-label>
+            <ion-input [(ngModel)]="resident.age" type="number" placeholder="Enter age"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Relation</ion-label>
+            <ion-select [(ngModel)]="resident.relation" placeholder="Select relation">
+              <ion-select-option value="family">Family</ion-select-option>
+              <ion-select-option value="tenant">Tenant</ion-select-option>
+              <ion-select-option value="other">Other</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-button color="danger" (click)="removeResident(i)">Remove Resident</ion-button>
+        </div>
+  
+        <!-- Water Supply -->
+        <ion-item>
+          <ion-label position="stacked">Water supply</ion-label>
+          <ion-select [(ngModel)]="residential.waterSupply" placeholder="Select water supply">
+            <ion-select-option value="house">Connected to the house</ion-select-option>
+            <ion-select-option value="yard">Connected to the yard</ion-select-option>
+            <ion-select-option value="street">Connected to the street</ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <!-- Geyser Availability -->
+        <ion-item>
+          <ion-label position="stacked">Is a geyser available?</ion-label>
+          <ion-select [(ngModel)]="residential.waterGeyser" placeholder="Select option">
+            <ion-select-option value="yes">Yes</ion-select-option>
+            <ion-select-option value="no">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <!-- Electricity -->
+        <ion-item>
+          <ion-label position="stacked">Electricity</ion-label>
+          <ion-select [(ngModel)]="residential.electricity" placeholder="Select option">
+            <ion-select-option value="connected">Connected</ion-select-option>
+            <ion-select-option value="not_connected">Not Connected</ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <!-- Toilet Type -->
+        <ion-item>
+          <ion-label position="stacked">Toilet type</ion-label>
+          <ion-textarea [(ngModel)]="residential.toilet" placeholder="e.g., flush, pit, outside..."></ion-textarea>
+        </ion-item>
+  
+        <!-- Bathing Facilities -->
+        <ion-item>
+          <ion-label position="stacked">Bathing facilities</ion-label>
+          <ion-textarea [(ngModel)]="residential.bathingFacilities" placeholder="e.g., shower, bath, skottel..."></ion-textarea>
+        </ion-item>
+  
+        <!-- Yard Description -->
+        <ion-item>
+          <ion-label position="stacked">Yard description</ion-label>
+          <ion-textarea [(ngModel)]="residential.yardDescription" placeholder="e.g., gravel, lawn, flower beds..."></ion-textarea>
+        </ion-item>
+  
+      </div>
+    </ion-accordion>
+
+    <!-- Community Accessibility -->
+    <ion-accordion value="community-accessibility">
+      <ion-item slot="header" color="green">
+        <ion-label>Community Accessibility</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+  
+        <!-- Main Form of Transport -->
+        <ion-item>
+          <ion-label position="stacked">Main Form of Transport</ion-label>
+          <ion-input [(ngModel)]="communityAccessibility.transport" placeholder="Enter transport type"></ion-input>
+        </ion-item>
+  
+        <!-- Driver's License -->
+        <ion-item>
+          <ion-label position="stacked">Driver's License</ion-label>
+          <ion-input [(ngModel)]="communityAccessibility.driversLicense" placeholder="Enter license status"></ion-input>
+        </ion-item>
+  
+        <!-- Type of Vehicle Owned -->
+        <ion-item>
+          <ion-label position="stacked">Type of Vehicle Owned</ion-label>
+          <ion-input [(ngModel)]="communityAccessibility.vehicleOwned" placeholder="Enter vehicle type"></ion-input>
+        </ion-item>
+  
+        <!-- Problems Experienced -->
+        <ion-item>
+          <ion-label position="stacked">Problems Experienced</ion-label>
+          <ion-textarea [(ngModel)]="communityAccessibility.problemsExperienced" placeholder="Describe problems"></ion-textarea>
+        </ion-item>
+  
+        <!-- Access to Life Amenities -->
+        <h3>Access to Life Amenities</h3>
+        <ion-grid>
+          <ion-row>
+            <ion-col><ion-label>Place</ion-label></ion-col>
+            <ion-col><ion-label>Travel Method</ion-label></ion-col>
+            <ion-col><ion-label>Distance/Time</ion-label></ion-col>
+            <ion-col><ion-label>Cost (Return)</ion-label></ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col><ion-label>Taxi Pick-up</ion-label></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.taxiPickup.method" placeholder="Enter travel method"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.taxiPickup.distanceTime" placeholder="Enter distance/time"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.taxiPickup.cost" placeholder="Enter cost"></ion-input></ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col><ion-label>Shop/Mall</ion-label></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.shopMall.method" placeholder="Enter travel method"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.shopMall.distanceTime" placeholder="Enter distance/time"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.shopMall.cost" placeholder="Enter cost"></ion-input></ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col><ion-label>Clinic</ion-label></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.clinic.method" placeholder="Enter travel method"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.clinic.distanceTime" placeholder="Enter distance/time"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.clinic.cost" placeholder="Enter cost"></ion-input></ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col><ion-label>Hospital</ion-label></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.hospital.method" placeholder="Enter travel method"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.hospital.distanceTime" placeholder="Enter distance/time"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.hospital.cost" placeholder="Enter cost"></ion-input></ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col><ion-label>Work/School</ion-label></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.workSchool.method" placeholder="Enter travel method"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.workSchool.distanceTime" placeholder="Enter distance/time"></ion-input></ion-col>
+            <ion-col><ion-input [(ngModel)]="communityAccessibility.workSchool.cost" placeholder="Enter cost"></ion-input></ion-col>
+          </ion-row>
+        </ion-grid>
+  
+        <!-- Accident-Related Changes -->
+        <h3>Any Accident-Related Changes</h3>
+        <ion-item>
+          <ion-label position="stacked">Residential Situation at Time of Accident</ion-label>
+          <ion-textarea [(ngModel)]="communityAccessibility.residentialSituationAccident" placeholder="Describe situation"></ion-textarea>
+        </ion-item>
+  
+        <!-- Future Residential Plans -->
+        <ion-item>
+          <ion-label position="stacked">Future Residential Plans</ion-label>
+          <ion-textarea [(ngModel)]="communityAccessibility.futureResidentialPlans" placeholder="Describe future plans"></ion-textarea>
+        </ion-item>
+  
+      </div>
+    </ion-accordion>
+
+    <!-- Activities of Daily Living -->
+    <!-- Transfers / Functional Mobility -->
+    <ion-accordion-group>
+      <ion-accordion value="transfers-functional-mobility">
+        <ion-item slot="header" color="green">
+          <ion-label>Transfers / Functional Mobility</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" slot="start" [(ngModel)]="activities.transfersPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} was independent with transfers.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.transfersPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-checkbox slot="start" slot="start" [(ngModel)]="activities.transfersPre.difficulty"></ion-checkbox>
+            <ion-label>{{ client.name }} reported difficulty with transfer in/out of bed/car/bath/on and off a chair.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.transfersPre.difficultyDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.transfersPre.pain"></ion-checkbox>
+            <ion-label>{{ client.name }} reported the interference of pain affecting sleep/bed mobility.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.transfersPre.painDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.transfersCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} is independent with transfers.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.transfersCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.transfersCurrent.difficulty"></ion-checkbox>
+            <ion-label>{{ client.name }} reports difficulty with transfer in/out of bed/car/bath/on and off a chair.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.transfersCurrent.difficultyDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.transfersCurrent.pain"></ion-checkbox>
+            <ion-label>{{ client.name }} reports the interference of pain affecting sleep/bed mobility.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.transfersCurrent.painDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+
+      <!-- Eating -->
+      <ion-accordion value="eating">
+        <ion-item slot="header" color="green">
+          <ion-label>Eating</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.eatingPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} managed independently with eating.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.eatingPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.eatingPre.difficulty"></ion-checkbox>
+            <ion-label>{{ client.name }} reports difficulty with the following:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.eatingPre.difficultyDetails" placeholder="Cutting / eating hard food."></ion-textarea>
+          </ion-item>
+
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.eatingCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} manages independently with eating.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.eatingCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.eatingCurrent.difficulty"></ion-checkbox>
+            <ion-label>{{ client.name }} reports difficulty with the following:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.eatingCurrent.difficultyDetails" placeholder="Cutting / eating hard food."></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+
+      <!-- Toileting -->
+      <ion-accordion value="toileting">
+        <ion-item slot="header" color="green">
+          <ion-label>Toileting</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.toiletingPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} was independent with toileting.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.toiletingPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.toiletingCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} is independent with toileting.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.toiletingCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+
+      <!-- Washing -->
+      <ion-accordion value="washing">
+        <ion-item slot="header" color="green">
+          <ion-label>Washing</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.washingPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} was independent with washing.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.washingPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.washingCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} is independent with washing.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.washingCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+
+      <!-- Dressing -->
+      <ion-accordion value="dressing">
+        <ion-item slot="header" color="green">
+          <ion-label>Dressing</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.dressingPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} was independent with dressing.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.dressingPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.dressingCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} is independent with dressing.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.dressingCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+
+      <!-- Grooming -->
+      <ion-accordion value="grooming">
+        <ion-item slot="header" color="green">
+          <ion-label>Grooming</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.groomingPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} was independent with grooming.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.groomingPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.groomingCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} is independent with grooming.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.groomingCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+
+      <!-- Sexual Functioning -->
+      <ion-accordion value="sexual-functioning">
+        <ion-item slot="header" color="green">
+          <ion-label>Sexual Functioning</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.sexualPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} was independent with sexual functioning.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.sexualPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="activities.sexualCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} is independent with sexual functioning.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="activities.sexualCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+
+    <!-- Instrumental Activities of Daily Living -->
+    <ion-accordion-group>
+
+      <!-- Taking care of others/pets/children -->
+      <ion-accordion value="taking-care">
+        <ion-item slot="header" color="green">
+          <ion-label>Taking care of others/pets/children</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.carePre.petsIndependent"></ion-checkbox>
+            <ion-label>{{ client.name }} regularly cared for pets and could do so independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.carePre.petsIndependentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.carePre.childrenIndependent"></ion-checkbox>
+            <ion-label>{{ client.name }} frequently looked after children and could do so independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.carePre.childrenIndependentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.carePre.elderlyIndependent"></ion-checkbox>
+            <ion-label>{{ client.name }} helped take care of elderly family members and could do so independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.carePre.elderlyIndependentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.careCurrent.petsIndependent"></ion-checkbox>
+            <ion-label>{{ client.name }} regularly cares for pets and can still do so independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.careCurrent.petsIndependentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.careCurrent.childrenIndependent"></ion-checkbox>
+            <ion-label>{{ client.name }} frequently looks after children and can still do so independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.careCurrent.childrenIndependentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.careCurrent.elderlyIndependent"></ion-checkbox>
+            <ion-label>{{ client.name }} helps take care of elderly family members and can still do so independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.careCurrent.elderlyIndependentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+    
+      <!-- Transport / Community Accessibility -->
+      <ion-accordion value="transport">
+        <ion-item slot="header" color="green">
+          <ion-label>Transport / Community Accessibility</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.transportPre.publicTransport"></ion-checkbox>
+            <ion-label>{{ client.name }} used public transport.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.transportPre.publicTransportDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.transportPre.walking"></ion-checkbox>
+            <ion-label>{{ client.name }} walked occasionally/frequently to visit community facilities.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.transportPre.walkingDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.transportCurrent.publicTransport"></ion-checkbox>
+            <ion-label>Public transport</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.transportCurrent.publicTransportDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.transportCurrent.walking"></ion-checkbox>
+            <ion-label>{{ client.name }} walks to community facilities.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.transportCurrent.walkingDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+    
+      <!-- Financial Management -->
+      <ion-accordion value="financial-management">
+        <ion-item slot="header" color="green">
+          <ion-label>Financial Management</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.financialPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} managed personal finances independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.financialPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.financialCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} manages personal finances independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.financialCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+    
+      <!-- Home Management -->
+      <ion-accordion value="home-management">
+        <ion-item slot="header" color="green">
+          <ion-label>Home Management</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h3>Cooking</h3>
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.cookingPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} managed cooking independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.cookingPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.cookingCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} manages cooking independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.cookingCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h3>Domestic Chores</h3>
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.choresPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} managed domestic chores independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.choresPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.choresCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} manages domestic chores independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.choresCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h3>Maintenance and Repairs</h3>
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.maintenancePre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} managed home maintenance and repairs independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.maintenancePre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.maintenanceCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} manages home maintenance and repairs independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.maintenanceCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h3>Shopping</h3>
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.shoppingPre.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} managed shopping independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.shoppingPre.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="instrumental.shoppingCurrent.independent"></ion-checkbox>
+            <ion-label>{{ client.name }} manages shopping independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="instrumental.shoppingCurrent.independentDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+    
+    </ion-accordion-group>
+
+    <ion-accordion-group>
+
+      <!-- Habits -->
+      <ion-accordion value="habits">
+        <ion-item slot="header" color="green">
+          <ion-label>Habits</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+    
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.habitsPre.noAlcohol"></ion-checkbox>
+            <ion-label>{{ client.name }} did not consume alcohol.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.habitsPre.noAlcoholDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.habitsPre.occasionalAlcohol"></ion-checkbox>
+            <ion-label>{{ client.name }} occasionally consumed alcohol.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.habitsPre.occasionalAlcoholDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.habitsPre.frequentAlcohol"></ion-checkbox>
+            <ion-label>{{ client.name }} frequently consumed alcohol.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.habitsPre.frequentAlcoholDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.habitsPre.noDrugs"></ion-checkbox>
+            <ion-label>{{ client.name }} did not use drugs.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.habitsPre.noDrugsDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.habitsPre.occasionalDrugs"></ion-checkbox>
+            <ion-label>{{ client.name }} occasionally used drugs.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.habitsPre.occasionalDrugsDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.habitsPre.smoking"></ion-checkbox>
+            <ion-label>{{ client.name }} smoked.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.habitsPre.smokingDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.habitsCurrent.alcohol"></ion-checkbox>
+            <ion-label>Consumption of alcohol:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.habitsCurrent.alcoholDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.habitsCurrent.drugs"></ion-checkbox>
+            <ion-label>Drug use:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.habitsCurrent.drugsDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.habitsCurrent.smoking"></ion-checkbox>
+            <ion-label>Smoking:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.habitsCurrent.smokingDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+        </div>
+      </ion-accordion>
+    
+      <!-- Personal Management (Rituals and Routines) -->
+      <ion-accordion value="personal-management">
+        <ion-item slot="header" color="green">
+          <ion-label>Personal Management (Rituals and Routines)</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+    
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.personalManagementPre.managedIndependently"></ion-checkbox>
+            <ion-label>{{ client.name }} managed day planning, personal organization, shopping, socializing, etc. independently.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.personalManagementPre.details" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.personalManagementCurrent.managesAsBefore"></ion-checkbox>
+            <ion-label>{{ client.name }} manages as before.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.personalManagementCurrent.managesAsBeforeDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.personalManagementCurrent.difficulties"></ion-checkbox>
+            <ion-label>{{ client.name }} experiences difficulties with daily management.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.personalManagementCurrent.difficultiesDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.personalManagementCurrent.futureChanges"></ion-checkbox>
+            <ion-label>Changes {{ client.name }} plans to make in the future.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.personalManagementCurrent.futureChangesDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+        </div>
+      </ion-accordion>
+    
+      <!-- Roles -->
+      <ion-accordion value="roles">
+        <ion-item slot="header" color="green">
+          <ion-label>Roles</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+    
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.rolesPre.functionedAdequately"></ion-checkbox>
+            <ion-label>{{ client.name }} functioned adequately as carer/spouse/partner/parent/provider.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.rolesPre.functionedAdequatelyDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.rolesPre.carer"></ion-checkbox>
+            <ion-label>{{ client.name }} was a carer for others (family, children, elderly).</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.rolesPre.carerDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.rolesCurrent.functionAsBefore"></ion-checkbox>
+            <ion-label>{{ client.name }} functions as before in current roles.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.rolesCurrent.functionAsBeforeDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.rolesCurrent.roleChanges"></ion-checkbox>
+            <ion-label>Changes in roles since the accident.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.rolesCurrent.roleChangesDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+        </div>
+      </ion-accordion>
+    
+      <!-- Relationships -->
+      <ion-accordion value="relationships">
+        <ion-item slot="header" color="green">
+          <ion-label>Relationships</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+    
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.relationshipsPre.stableHealthy" placeholder="Describe if {{ client.name }} had stable and healthy relationships."></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.relationshipsCurrent.unchanged"></ion-checkbox>
+            <ion-label>{{ client.name }} reports quality of premorbid relationships were unchanged by the accident.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.relationshipsCurrent.unchangedDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.relationshipsCurrent.concerns"></ion-checkbox>
+            <ion-label>Concerns with relationships since the accident.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.relationshipsCurrent.concernsDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="performancePatterns.relationshipsCurrent.changes"></ion-checkbox>
+            <ion-label>Changes in relationship status since the accident.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="performancePatterns.relationshipsCurrent.changesDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+        </div>
+      </ion-accordion>
+    
+    </ion-accordion-group>
+    
+
+    <!-- Leisure & Recreation -->
+    <ion-accordion-group>
+
+      <!-- Recreation -->
+      <ion-accordion value="recreation">
+        <ion-item slot="header" color="green">
+          <ion-label>Recreation</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-label position="stacked">Describe {{ client.name }}'s involvement in hobbies, community groups, religious activities, sports, etc., before the accident:</ion-label>
+            <ion-textarea [(ngModel)]="leisureRecreation.recreationPre" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-label position="stacked">Describe any accident-related changes in hobbies, involvement in community groups, religious activities, sports, etc.:</ion-label>
+            <ion-textarea [(ngModel)]="leisureRecreation.recreationCurrent" placeholder="Details"></ion-textarea>
+          </ion-item>
+        </div>
+      </ion-accordion>
+    
+      <!-- Gardening -->
+      <ion-accordion value="gardening">
+        <ion-item slot="header" color="green">
+          <ion-label>Gardening</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <h4>Pre-morbid:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningPre.responsible"></ion-checkbox>
+            <ion-label>{{ client.name }} was responsible for medium to occasional heavy gardening tasks.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningPre.responsibleDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningPre.notResponsible"></ion-checkbox>
+            <ion-label>{{ client.name }} was not responsible for medium to occasional heavy gardening tasks.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningPre.notResponsibleDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningPre.managedIndependently"></ion-checkbox>
+            <ion-label>{{ client.name }} managed gardening independently for the following tasks:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningPre.managedIndependentlyDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningPre.assistance"></ion-checkbox>
+            <ion-label>{{ client.name }} had assistance with gardening for ___ days per week.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningPre.assistanceDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <h4>Current:</h4>
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningCurrent.notResponsible"></ion-checkbox>
+            <ion-label>{{ client.name }} is still not responsible for gardening tasks.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningCurrent.notResponsibleDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningCurrent.managesIndependently"></ion-checkbox>
+            <ion-label>{{ client.name }} manages gardening independently without difficulty.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningCurrent.managesIndependentlyDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningCurrent.toleratesPain"></ion-checkbox>
+            <ion-label>{{ client.name }} manages gardening tasks while tolerating the following pain/symptoms:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningCurrent.toleratesPainDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningCurrent.adjustedMethods"></ion-checkbox>
+            <ion-label>{{ client.name }} must use the following adjusted methods to manage gardening tasks:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningCurrent.adjustedMethodsDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningCurrent.dependsAssistance"></ion-checkbox>
+            <ion-label>{{ client.name }} now depends on assistance and is assisted by ___ / employees, gardening assistance for ___ days per week.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningCurrent.dependsAssistanceDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+          <ion-item>
+            <ion-checkbox slot="start" [(ngModel)]="leisureRecreation.gardeningCurrent.specifySymptoms"></ion-checkbox>
+            <ion-label>Specify symptoms:</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="leisureRecreation.gardeningCurrent.specifySymptomsDetails" placeholder="Details"></ion-textarea>
+          </ion-item>
+    
+        </div>
+      </ion-accordion>
+    
+    </ion-accordion-group>
+    
+  </ion-accordion-group>
+</ion-content>
